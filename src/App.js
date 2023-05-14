@@ -8,7 +8,7 @@ import Footer from './layout/footer/Footer';
 
 function App() {
 
-  let isLoggedIn = false;
+  let isLoggedIn = true;
   
   return (
     <>
