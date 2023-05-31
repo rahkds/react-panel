@@ -19,12 +19,14 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import { NavLink,Link, Outlet } from 'react-router-dom';
+import {routeArray} from '../../routes/AppRouteData';
 
 const drawerWidth = 240;
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(({ theme, open }) => ({
   flexGrow: 1,
   padding: theme.spacing(3),
+  marginTop:'50px',
   transition: theme.transitions.create('margin', {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
@@ -119,16 +121,16 @@ export default function PersistentDrawerLeft() {
         <Divider />
         
         <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem key={text} disablePadding component={Link} to="/test">
-              <ListItemButton>
+          {routeArray.map((elem, index) => (
+            <ListItem key={elem.title} disablePadding component={Link} to={elem.path} >
+              <ListItemButton selected={elem.title=='Inbox'}>
              
              
                 <ListItemIcon>
                   {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                  
                 </ListItemIcon>
-                <ListItemText primary={text} />
+                <ListItemText primary={elem.title} />
               {/* </Link> */}
               </ListItemButton>
             </ListItem>

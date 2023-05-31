@@ -25,6 +25,8 @@ export default function() {
       email: data.get('email'),
       password: data.get('password'),
     });
+    localStorage.setItem("login", "1");
+    
   };
 
   return (
