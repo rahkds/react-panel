@@ -10,6 +10,10 @@ export default {
         URL_UPDATE_STATUS: '/cms/updateStatus',
     },
 
+    PUBLIC_ROUTES : {
+        LOGIN_URL : "/auth/login"
+    },
+
     ADMIN_BASE_URL : "",
 
     ADMIN_API_URL: {

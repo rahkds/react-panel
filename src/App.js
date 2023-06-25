@@ -1,23 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
 import {Route, Routes} from "react-router-dom";
+
 import AuthRoute from './routes/AuthRoute';
-import NonAuthRoute from './routes/NonAuthRoute';
+import PublicRoute from './routes/PublicRoute';
 import Footer from './layout/footer/Footer';
 
 
 function App() {
-
-  let isLoggedIn = localStorage.getItem("login") == "1";
   
   return (
     <>
-        {
-          isLoggedIn ? <AuthRoute/> : <NonAuthRoute/>
-        }
-         <Footer/>
+        <PublicRoute/>
+        <AuthRoute/>
+        <Footer/>
     </>
   );
 }
 
+
+
 export default App;
+

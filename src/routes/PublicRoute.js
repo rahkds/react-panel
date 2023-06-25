@@ -6,7 +6,7 @@ export default function() {
     return (
         <>
             <Routes>
-                <Route index element={ <Login/>}  />
+                <Route path="/auth/login" element={ <Login/>}  />
             </Routes>
         </>
     );
